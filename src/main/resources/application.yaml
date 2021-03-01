@@ -1,0 +1,30 @@
+server:
+  port: 8008
+spring:
+  application:
+    name: post-service
+  datasource:
+    url: jdbc:mariadb://localhost:3306/micro-post?createDatabaseIfNotExist=true
+    username: root
+    password: 
+    driver-class-name: org.mariadb.jdbc.Driver
+    hikari:
+      data-source-properties:
+        characterEncoding: UTF-8
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  liquibase:
+    change-log: 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+info:
+  application:
+    name: post Service
+    description: this is microservice post
+    version: 1.0.0
+    
